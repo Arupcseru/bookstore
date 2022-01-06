@@ -14,20 +14,29 @@ foreach ($books as $book){
         array_push($result,$book);
     }
 }
-print_r($result);
+//print_r($result);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
 <h1 class="title">
     Search Result for "<?php echo $author?>"
 </h1>
+<div class="container-fluid">
+<div class="create-btn">
+    <a href="index.php">
+        <button class="btn btn-primary create-btn">Back</button>
+    </a>
+</div>
+</div>
+<br>
+<br>
 <table class="table table-striped">
     <tr>
         <?php foreach (array_values($books)[0] as $key => $alue): ?>

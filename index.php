@@ -13,33 +13,43 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      <link rel="stylesheet" type="text/css" href="css/style.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   </head>
   <body>
   <h1 class="title">
       Book Store
   </h1>
-  <div class="search-bar ">
-      <form action="search.php" method="post">
-          <label style="font-size: large;">Search by Author : </label>
-          <input type="text" class="input-field" name="search" />
-          <input type="submit" class="input-field" value="Search" />
-      </form>
-  </div>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col">
+              <form class="row g-5 justify-content-md-center" action="search.php" method="post">
+                  <div class="col-auto">
+                      <label class="" style="font-size: large;">Search by Author : </label>
+                  </div>
+                  <div class="col-auto">
+                      <input type="text" class="form-control" name="search" placeholder="Author Name" />
+                  </div>
+                  <div class="col-auto">
+                      <button type="submit" class="btn btn-primary mb-3">Search</button>
+                  </div>
+              </form>
+          </div>
 
-  <div class="create-btn">
-      <a href="create.php">
-          <button class="btn btn-primary  ">Add Entry</button>
-      </a>
+          <div class="create-btn col">
+              <a href="create.php">
+                  <button class="btn btn-primary create-btn  ">Add Entry</button>
+              </a>
+          </div>
+      </div>
   </div>
 
   <table class="table table-striped">
       <tr>
-          <?php foreach (array_values($books)[0] as $key => $alue): ?>
+          <?php foreach (array_values($books)[0] as $key => $value): ?>
           <th><?php echo strtoupper($key) ?></th>
           <?php endforeach; ?>
-          <th>Action</th>
+          <th class="text-center">Action</th>
       </tr>
       <?php foreach ($books as $key => $book): ?>
           <tr>
